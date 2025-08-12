@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Product.find_or_create_by!(code: 'GT') do |p|
+  p.name = 'Green Tea'
+  p.price_cents = 310
+end
+
+Product.find_or_create_by!(code: 'ST') do |p|
+  p.name = 'Strawberries'
+  p.price_cents = 500
+end
+
+Product.find_or_create_by!(code: 'CF') do |p|
+  p.name = 'Coffee'
+  p.price_cents = 1150
+end
