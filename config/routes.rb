@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       post 'checkout', to: 'checkout#create'
     end
   end
+
+  root to: 'home#index'
 end

@@ -1,0 +1,3 @@
+<div id="react-root">
+	<%= react_component("App", { products: Product.all.as_json(only: [:code, :name, :price_cents]) })%>
+</div>

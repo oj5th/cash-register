@@ -6,7 +6,7 @@
     "esbuild": "^0.25.8"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --loader:.js=jsx --outdir=app/assets/builds --public-path=/assets"
   },
   "dependencies": {
     "react": "^19.1.1",
