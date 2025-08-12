@@ -11,8 +11,8 @@ class Checkout
   end
 
   def total_cents
-    counts = scanned.group_by(&:itself).trasnform_values(&:size)
-    products = Product.where(code: code.keys).index_by(&:code)
+    counts = scanned.group_by(&:itself).transform_values(&:size)
+    products = Product.where(code: counts.keys).index_by(&:code)
 
     counts.sum do |code, count|
       product = products[code]
@@ -20,7 +20,7 @@ class Checkout
 
       rule = rules.find { |r| r.applicable_skus.include?(code) }
       if rule
-        rule.applu(product: product, count: count)
+        rule.apply(product: product, count: count)
       else
         product.price_cents * count
       end
