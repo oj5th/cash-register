@@ -13,7 +13,7 @@ module PricingRules
 
     def apply(product:, count:)
       if count >= @threshold
-        unit = ((product.price_cents * numerator).to_f / @denominator).round
+        unit = ((product.price_cents * @numerator).to_f / @denominator).round
       else
         unit = product.price_cents
       end
